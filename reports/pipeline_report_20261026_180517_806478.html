@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Data Pipeline Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+            color: #212529;
+            background: #f8f9fa;
+        }
+        h1 { margin-bottom: 8px; }
+        .subtitle { color: #6c757d; }
+        .status {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 6px;
+            background: #198754;
+            color: white;
+            font-weight: bold;
+        }
+        .panel {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-wrap: anywhere;
+        }
+        th, td {
+            padding: 11px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th { width: 35%; background: #f1f3f5; }
+        .error { color: #b02a37; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>Customer Data Pipeline Report</h1>
+    <p class="subtitle">SQL Server → Python → PostgreSQL</p>
+    <p class="status">SUCCESS</p>
+
+    <div class="panel">
+        <h2>Execution Summary</h2>
+        <p><strong>Pipeline:</strong> Customer Data Pipeline</p>
+        <p><strong>Run ID:</strong> 20261026_180517_806478</p>
+        <p><strong>Duration:</strong>
+           1.68 seconds</p>
+        <p><strong>Records extracted:</strong>
+           9902</p>
+        <p><strong>Records transformed:</strong>
+           9902</p>
+        <p><strong>Records loaded:</strong>
+           9902</p>
+    </div>
+
+    <div class="panel">
+        <h2>Execution Details</h2>
+        <table>
+            <tbody>
+                <tr><th>Run Id</th><td>20261026_180517_806478</td></tr><tr><th>Pipeline Name</th><td>Customer Data Pipeline</td></tr><tr><th>Status</th><td>SUCCESS</td></tr><tr><th>Start Time</th><td>2026-10-26 18:05:17</td></tr><tr><th>End Time</th><td>2026-10-26 18:05:19</td></tr><tr><th>Duration Seconds</th><td>1.68</td></tr><tr><th>Records Extracted</th><td>9902</td></tr><tr><th>Records Transformed</th><td>9902</td></tr><tr><th>Records Loaded</th><td>9902</td></tr><tr><th>Previous Watermark</th><td>2026-10-10 17:40:00</td></tr><tr><th>New Watermark</th><td>2026-10-10 18:04:00</td></tr><tr><th>Failed Stage</th><td></td></tr><tr><th>Error Message</th><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="error"></p>
+</body>
+</html>

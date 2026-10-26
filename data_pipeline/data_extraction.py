@@ -1,21 +1,33 @@
 from config.sql_server_connection import create_connection
 
-def customer_data_extraction():
+
+def customer_data_extraction(last_watermark=None):
     conn = create_connection()
+    cursor = conn.cursor()
 
-    cursor = conn.cursor() 
+    try:
+        if last_watermark is None:
+            query = """
+                SELECT customer_id, customer_name, email, country, updated_at
+                FROM source_data.customers
+            """
+            cursor.execute(query)
+        else:
+            query = """
+                SELECT customer_id, customer_name, email, country, updated_at
+                FROM source_data.customers
+                WHERE updated_at >= ?
+            """
+            cursor.execute(query, (last_watermark,))
 
-    schemaname = 'source_data'
-    tablename = 'customers' 
+        data = cursor.fetchall()
+        print(f"Successfully extracted {len(data)} records")
+        return data
 
-    extraction_query = f'select * from {schemaname}.{tablename}'
+    except Exception as exc:
+        print(f"Error extracting data: {exc}")
+        raise
 
-    cursor.execute(extraction_query)
-
-    data = cursor.fetchall()
-    print(f'Total Records are extracted: {len(data)}')
-    return data
-
-
-
-
+    finally:
+        cursor.close()
+        conn.close()

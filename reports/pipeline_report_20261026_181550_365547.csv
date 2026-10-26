@@ -1,0 +1,2 @@
+﻿run_id,pipeline_name,status,start_time,end_time,duration_seconds,records_extracted,records_transformed,records_loaded,previous_watermark,new_watermark,failed_stage,error_message
+20261026_181550_365547,Customer Data Pipeline,SUCCESS,2026-10-26 18:15:50,2026-10-26 18:15:50,0.55,1,1,1,2026-10-10 18:04:00,2026-10-10 18:04:00,,
