@@ -16,7 +16,7 @@ def customer_data_extraction(last_watermark=None):
             query = """
                 SELECT customer_id, customer_name, email, country, updated_at
                 FROM source_data.customers
-                WHERE updated_at >= ?
+                WHERE updated_at > ?
             """
             cursor.execute(query, (last_watermark,))
 

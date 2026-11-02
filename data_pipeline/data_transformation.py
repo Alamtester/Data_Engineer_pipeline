@@ -32,7 +32,7 @@ def data_transformation(data):
 
         transformed_data.append(transformed_row)
 
-    print(f"Transformed data:{len(transformed_data[0])}")
+    print(f"Transformed data:{len(transformed_data)}")
 
 
     return transformed_data
